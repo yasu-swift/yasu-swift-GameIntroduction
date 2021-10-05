@@ -13,20 +13,15 @@ class Game extends Model
 
     public function scopeSearch(Builder $query, $params)
     {
-        // if (!empty($params['name'])) {
-        //     $query->where('name', 'like', '%' . $params['name'] . '%');
-        // }
-        // if (!empty($params['tag'])) {
-        //     $query->whereHas('tag', function ($q) use ($params) {
-        //         $q->where('tag_name', 'like', '%' . $params['tag'] . '%');
-        //     });
-        // }
-        // if (!empty($params['genre'])) {
-        //     $query->whereHas('genre', function ($q) use ($params) {
-        //         $q->where('genre_name', 'like', '%' . $params['genre'] . '%');
-        //     });
-        // }
-        // return $query;
+        if (!empty($params['title'])) {
+            $query->where('title', 'like', '%' . $params['title'] . '%');
+        }
+        if (!empty($params['genre'])) {
+            $query->whereHas('genre', function ($q) use ($params) {
+                $q->where('name', 'like', '%' . $params['genre'] . '%');
+            });
+        }
+        return $query;
     }
 
     // public function tag()
@@ -37,8 +32,9 @@ class Game extends Model
     {
         return $this->belongsTo(\App\Models\Genre::class);
     }
-    public function menus()
+    public function images()
     {
-        return $this->hasMany(\App\Models\Menu::class);
+        return $this->hasMany(\App\Models\Image::class);
     }
+    
 }
