@@ -40,7 +40,7 @@
             </select>
         </div>
         <div>
-            <label for="img_path">画像url</label>
+            <label for="img_path">画像</label>
             <input type="text" name="img_path" id="img_path" value="{{ old('img_path', $game->img_path) }}">
         </div>
         <div>

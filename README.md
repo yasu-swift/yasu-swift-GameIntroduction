@@ -62,3 +62,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Sumeba ― ゲーム集会所
+
+## About This App
+* 自分の好きなゲームを紹介するアプリ
+
+## テーブル定義
+* 画像テーブル･･･画像情報
+* ジャンルテーブル･･･ジャンル名
+* 記事テーブル･･･記事情報
+* ユーザーテーブル･･･ユーザー情報
+* イメージテーブル･･･記事に添付する画像パス
+https://docs.google.com/spreadsheets/d/15Q1iYB-spWJC6y45kGpwEYSWhvuDoL7t4HbTqlWyz5I/edit#gid=0
+
+## 実装機能
+* CRUD機能
+* 検索
+  * フリーワード検索
+  * タイトル ジャンル(選択)から検索
+* ファイルアップロード ー>DBには保存されているが、表示できませんでした ー>未完成です
+
+## 画面
+
+### 一覧画面

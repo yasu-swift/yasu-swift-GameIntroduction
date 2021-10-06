@@ -39,9 +39,8 @@
             </select>
         </div>
         <div>
-
             <p>&nbsp;</p>
-            <label for="img_path">画像url</label>
+            <label for="img_path">画像</label>
             <input type="file" name="img_path" id="img_path" value="{{ old('img_path') }}">
             <p>&nbsp;</p>
         </div>
