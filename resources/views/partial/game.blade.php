@@ -9,7 +9,9 @@
             </h3>
         </div>
         <div>
-            <div><h5>{{ mb_strimwidth($game->body, 0, 50) }}...</h5></div>
+            <div>
+                <h5>{{ mb_strimwidth($game->body, 0, 50) }}...</h5>
+            </div>
             <div><b>ジャンル<dl>{{ $game->genre->name }}</b></div>
             @if (!empty($game->images))
                 <ul class="image_images">
@@ -17,9 +19,9 @@
                         <li class="item">
                             <img src="{{ asset($image->img_path) }}" class="square-img-s">
                         </li>
-                        @break($loop->iteration >= 7)
-                    @endforeach
-                </ul>
+                    @break($loop->iteration >= 7)
+            @endforeach
+            </ul>
             @endif
         </div>
     </div>

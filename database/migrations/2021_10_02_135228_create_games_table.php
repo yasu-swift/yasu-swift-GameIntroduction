@@ -17,11 +17,11 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('title');
-            $table->string('body');
-            $table->unsignedInteger('genre_id');
+            $table->text('body');
+            $table->unsignedInteger('genre_id')->nullable();
             $table->foreign('genre_id')              // genre_idに外部キーを設定する
                 ->references('id')->on('genres')    // genresテーブルのidカラムを外部キーにする
-                ->onDelete('restrict');                 // 参照先の削除を禁止する
+                ->onDelete('restrict')->nullable();                 // 参照先の削除を禁止する
             $table->timestamps();
         });
     }

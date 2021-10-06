@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Game;
 use Illuminate\Http\Request;
+
 class GameController extends Controller
 {
     /**
@@ -15,10 +16,6 @@ class GameController extends Controller
     public function index(Request $request)
     {
         // 順番大事
-        // $games = Game::all();
-        // $games = Game::paGinate(6);
-        // return view('games.index', compact('games'));
-
         $title = $request->title;
         $genre = $request->genre;
         $params = $request->query();
@@ -33,9 +30,10 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Game $game)
     {
-        //
+        $genres = Genre::all();
+        return view('games.create', compact('game', 'genres'));
     }
 
     /**
@@ -46,7 +44,15 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $game = new Game();
+        $game->genre_id = $request->genre;
+        $game->name = $request->name;
+        $game->title = $request->title;
+        $game->body = $request->body;
+        $game->img_path = $request->img_path;
+        $game->save();
+        // dd($game);
+        return redirect()->route('games.index');
     }
 
     /**
@@ -69,7 +75,8 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        $genres = Genre::all();
+        return view('games.edit', compact('game', 'genres'));
     }
 
     /**
@@ -81,7 +88,14 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        //
+        $game->genre_id = $request->genre;
+        $game->name = $request->name;
+        $game->title = $request->title;
+        $game->body = $request->body;
+        $game->img_path = $request->img_path;
+        // dd($game);
+        $game->save();
+        return redirect()->route('games.index');
     }
 
     /**
@@ -92,6 +106,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        $game->delete();
+        return redirect()->route('games.index');
     }
 }

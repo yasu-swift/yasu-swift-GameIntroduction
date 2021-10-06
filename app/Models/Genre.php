@@ -9,6 +9,10 @@ class Genre extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'genre'
+    ];
+
     public function games()
     {
         return $this->hasMany(\App\Models\Game::class);

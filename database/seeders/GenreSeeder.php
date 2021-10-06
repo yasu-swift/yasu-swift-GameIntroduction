@@ -14,7 +14,6 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        // カテゴリーテーブルにデータが入っていなかった場合に実行する。
         if (!DB::table('genres')->first()) {
             DB::table('genres')->insert([
                 ['name' => 'スマホゲーム'],
@@ -49,6 +48,7 @@ class GenreSeeder extends Seeder
                 ['name' => 'テーブルゲーム'],
                 ['name' => 'ボードゲーム'],
                 ['name' => 'カードゲーム'],
+                ['name' => 'その他'],
             ]);
         }
     }

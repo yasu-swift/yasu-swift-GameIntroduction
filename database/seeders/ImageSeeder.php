@@ -18,8 +18,8 @@ class ImageSeeder extends Seeder
         $data = [];
         // ゲームテーブルのデータ数分繰り返す
         foreach (\App\Models\Game::all() as $r) {
-            // 記事毎に3枚の画像を登録する
-            for ($i = 0; $i < 12; $i++) {
+            // 記事毎に7枚の画像を登録する
+            for ($i = 0; $i < 7; $i++) {
                 // 配列に追加していく
                 $data[] = [
                     'game_id' => $r->id,

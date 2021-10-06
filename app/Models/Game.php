@@ -5,11 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+
 class Game extends Model
 {
     use HasFactory;
 
     // 並びの準備も大事
+    
+    protected $fillable = [
+        'img_path'
+    ];
 
     public function scopeSearch(Builder $query, $params)
     {
@@ -36,5 +41,4 @@ class Game extends Model
     {
         return $this->hasMany(\App\Models\Image::class);
     }
-    
 }

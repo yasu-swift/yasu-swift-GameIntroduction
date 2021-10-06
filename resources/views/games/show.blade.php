@@ -4,7 +4,7 @@
 
 @section('content')
     @include('partial.game')
-    <table class="table-bordered mb-5 mt-3">
+    <table class="table table-striped mb-5 mt-3">
         <colgroup span="1" style="width:200px;background-color:#efefef;"></colgroup>
         <tbody>
             <tr>
@@ -31,4 +31,12 @@
             </tr>
         </tbody>
     </table>
+    <!-- 論文のidを元に編集ページへ遷移する -->
+    <input type="button" value="編集" onclick="location.href='/games/{{ $game->id }}/edit'" class="btn btn-success">
+    {{-- 削除ボタン --}}
+    <form action="{{ route('games.destroy', $game) }}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit" onclick="if(!confirm('削除していいですか?')){return false}" class="btn btn-danger">削除する</button>
+    </form>
 @endsection

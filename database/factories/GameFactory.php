@@ -32,7 +32,7 @@ class GameFactory extends Factory
             'name' => $name,
             'title' => $game_name[array_rand($game_name)] . $game_action[array_rand($game_action)],
             'body' => $text,
-            'genre_id' => rand(1, 32),
+            'genre_id' => rand(1, 33),
             'img_path' => 'storage/game_image/' . rand(1, 15) . '.jpeg',
         ];
     }
