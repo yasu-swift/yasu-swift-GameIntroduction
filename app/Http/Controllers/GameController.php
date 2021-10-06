@@ -51,7 +51,6 @@ class GameController extends Controller
         $game->title = $request->title;
         $game->body = $request->body;
         $game->img_path = $request->img_path;
-        // dd($game);
         $game->save();
         return redirect()->route('games.index');
     }
@@ -94,7 +93,6 @@ class GameController extends Controller
         $game->title = $request->title;
         $game->body = $request->body;
         $game->img_path = $request->img_path;
-        // dd($game);
         $game->save();
         return redirect()->route('games.index');
     }

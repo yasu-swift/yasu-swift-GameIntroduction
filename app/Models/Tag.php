@@ -11,6 +11,6 @@ class Tag extends Model
 
     public function games()
     {
-        // return $this->hasMany(\App\Models\Game::class);
+        //
     }
 }

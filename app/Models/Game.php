@@ -29,10 +29,6 @@ class Game extends Model
         return $query;
     }
 
-    // public function tag()
-    // {
-    //     return $this->belongsTo(\App\Models\Tag::class);
-    // }
     public function genre()
     {
         return $this->belongsTo(\App\Models\Genre::class);

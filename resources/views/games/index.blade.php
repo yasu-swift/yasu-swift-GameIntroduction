@@ -3,8 +3,7 @@
 @section('title', '記事一覧')
 
 @section('content')
-    <img src="game_image/1/jpg" alt="">
-    @if (!empty($games))
+    @if ($games)
         <ul>
             @foreach ($games as $game)
                 <li class="list-unstyled border mb-5 pl-3 shadow">
