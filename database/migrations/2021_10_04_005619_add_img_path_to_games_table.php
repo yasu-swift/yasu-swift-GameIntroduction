@@ -14,8 +14,8 @@ class AddImgPathToGamesTable extends Migration
     public function up()
     {
         Schema::table('games', function (Blueprint $table) {
-            // カラム名img_pathをカラム名pr_longの後ろに追加する
-            $table->string('img_path')->after('genre_id');
+            // カラム名img_pathをカラム名genre_idの後ろに追加する
+            $table->string('img_path')->after('genre_id')->nullable();
         });
     }
 

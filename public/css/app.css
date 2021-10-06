@@ -10034,3 +10034,7 @@ h3 {
   display: inline-block;
   margin: 16px 8px 0px 0px;
 }
+
+.error {
+  color: red;
+}

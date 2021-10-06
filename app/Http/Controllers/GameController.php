@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Game;
 use Illuminate\Http\Request;
+use App\Http\Requests\GameRequest;
 
 class GameController extends Controller
 {
@@ -42,7 +43,7 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GameRequest $request)
     {
         $game = new Game();
         $game->genre_id = $request->genre;
@@ -50,8 +51,8 @@ class GameController extends Controller
         $game->title = $request->title;
         $game->body = $request->body;
         $game->img_path = $request->img_path;
-        $game->save();
         // dd($game);
+        $game->save();
         return redirect()->route('games.index');
     }
 
@@ -86,7 +87,7 @@ class GameController extends Controller
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Game $game)
+    public function update(GameRequest $request, Game $game)
     {
         $game->genre_id = $request->genre;
         $game->name = $request->name;
